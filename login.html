@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a{
+            text-decoration: none;
+        }
+        .next{
+              margin-left: 120px;
+              padding-top: 20px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <!-- User Login Form -->
+        <form id="loginForm">
+            <input type="text" id="userId" placeholder="Enter your ID" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <a href="index.html"><button type="submit">Login</button> <div class="next">NEXT</div></a>
+        </form>
+    </div>
+
+    <script>
+        // Adding event listener to the form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+            // Get the user ID and password values
+            const userId = document.getElementById('userId').value;
+            const password = document.getElementById('password').value;
+
+            // Get existing data from localStorage (if any)
+            let storedData = JSON.parse(localStorage.getItem('userData')) || [];
+
+            // Create an object to store current user ID and password
+            const userEntry = {
+                userId: userId,
+                password: password
+            };
+
+            // Add the new entry to the existing data array
+            storedData.push(userEntry);
+
+            // Store the updated array back to localStorage
+            localStorage.setItem('userData', JSON.stringify(storedData));
+
+            // Optionally, you can show a confirmation or redirect the user
+            alert('User ID and password stored successfully in localStorage!');
+            
+            // Clear the form after submission
+            document.getElementById('loginForm').reset();
+        });
+    </script>
+</body>
+</html>
+\

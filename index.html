@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Website</title>
+    <style>
+        /* Reset and Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: -webkit-linear-gradient(120deg, #00B5E2, #0A2540, #ffffff);
+            color: #333;
+            font-family: arial ;
+            background: linear-gradient(100deg,);
+            color: beige;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+
+        header .actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header .actions input[type="search"] {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        
+
+        header .actions a {
+            color: #fff;
+            padding: 5px 15px;
+            background-color: #3a6ca1;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        header .actions a:hover {
+            background-color: #2a5298;
+        }
+
+        /* Video Banner */
+        .video-banner {
+            position: relative;
+            overflow: hidden;
+            height: 60vh;
+        }
+
+        .video-banner video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-banner .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .video-banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background-color: #333;
+            color: beige;
+            padding: 15px 0;
+            background-color: rgb(12, 30, 89);
+        }
+
+        .nav-bar a {
+            color: beige;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background-color: #1e3c72;
+        }
+
+        /* Section (Product Overview, Use Case, etc.) */
+        .section-content {
+            display: none;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-content img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+
+        .active-section {
+            display: flex;
+        }
+
+        /* Product Cards */
+        .product-cards {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 50px;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            width: 40%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            margin-left: 400px;
+            height: 50%;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            color: #333;
+            padding: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #777;
+            padding-bottom: 20px;
+        }
+
+        /* Blog Post Section */
+        .blog-posts {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 40px 50px;
+            margin-top: 40px;
+            color: black;
+        }
+
+        .blog-post {
+            width: 30%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .blog-post img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .blog-post .content {
+            padding: 20px;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Footer Section */
+        li{
+            list-style-type: none;
+        }
+        footer{
+            font-family: Arial, Helvetica, sans-serif;
+            display: grid;
+            grid-template-columns: 6fr 2fr 2fr 2fr;
+            padding-top: 100px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            background-color: white;
+           
+        }
+        .the{
+            margin-left: 200px;
+            font-size: 50px;
+            line-height: 55px;
+            padding: 20px;
+            margin-bottom: 20px;
+
+        }
+        .show{
+            margin-left: 90px;
+        }
+        .icons{
+            margin-left: 200px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            word-spacing: 10px;
+            
+          
+        }
+        .sub{
+            font-size: 15px;
+            line-height: 40px;
+            margin-top:70px;
+        }
+        .icoko{
+            display: flex;
+            flex-direction: row;
+        }
+        .koen{
+           margin-top: 100px;
+           padding-top: 50px;
+           height: auto;
+           padding-right: 100px;
+        }
+        .copy{
+            margin-top: 50px;
+            margin-left: 200px;
+            font-weight: lighter;
+            font-size: 13px;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+
+        }
+       a:hover{
+        color: goldenrod;
+
+       }
+    </style>
+    <link rel="stylesheet" href="node_modules/node_modules/bootstrap-icons/font/bootstrap-icons.css ">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo"><img src="public/images/logo2.png" alt="" height="25px" width="100px"></div>
+        <div class="actions">
+            <input type="search" placeholder="Search...">
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+
+    <!-- Video Banner -->
+    <div class="video-banner">
+        <video autoplay muted loop>
+            <source src="public/videos/IMG_3101.MP4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <h1>Our Product Makes You Feel Safe</h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <a href="#product" onclick="showSection('product')">Product Overview</a>
+        <a href="#use-case  " onclick="showSection('use-case')">Use Case</a>
+        <!-- <a href="#research" onclick="showSection('research')">Research</a> -->
+        <!-- <a href="#" onclick="showSection('news')">News</a> -->
+        <a href="#pricing" onclick="showSection('pricing')">Pricing</a>
+    </div>
+
+    <!-- Product Overview Section -->
+    <div id="product" class="section-content">
+        <div>
+            <h2>Product Overview</h2>
+            <span class="bi bi-dot"></span>Safety gadget designed for personal security, seamlessly integrating into
+            smartwatches, bracelets, rings, and other accessories . <br>
+            <span class="bi bi-dot"></span>SOS alert system for emergencies. <br>
+            <span class="bi bi-dot"></span>It features GPS for real-time tracking, Bluetooth connectivity for app
+            integration. <br>
+            <span class="bi bi-dot"></span>The device is compact, water-resistant, and shockproof, ensuring durability
+            and daily usability. <br>
+            <span class="bi bi-dot"></span>With a power-efficient design, it offers extended battery life, making it
+            reliable for continuous safety. Safety Gadget combines advanced technology with stylish versatility, catering to
+            users of all preferences.
+        </div>
+        <img src="public/images/overview.png" alt="Product Overview">
+    </div>
+
+    <!-- Use Case Section -->
+    <div id="use-case" class="section-content">
+        <div>
+            <h2>Usecase</h2>
+            Safety Gadget is a versatile personal safety device designed for individuals prioritizing security, including
+            parents, the elderly, and solo travelers. It seamlessly integrates into wearable accessories like
+            smartwatches, rings, and bracelets, combining style with functionality. <br>
+
+            In emergencies, Safety Gadget enables instant SOS alerts to contacts or emergency services with a button press or
+            gesture, sharing real-time GPS location for quick assistance. Its motion sensors detect falls or sudden
+            movements, sending alerts even if the user cannot manually activate them.<br>
+
+            Ideal for children, elderly family members, solo travelers, and those in high-risk environments, Safety Gadget
+            offers peace of mind with real-time tracking and robust features like shockproof and water-resistant design.
+            It also doubles as a fitness tracker, monitoring heart rate and providing health insights via a smartphone
+            app.<br>
+
+            Safety Gadget is an all-in-one solution for safety, health, and convenience in any setting.
+        </div>
+        <img src="public/images/watch.jpg" alt="Use Case">
+    </div>
+
+    <!-- Research Section -->
+    <!-- <div id="research" class="section-content">
+        <div>
+            <h2>Research</h2>
+            <p>Our research and development efforts have led to some amazing breakthroughs. Learn more about the science
+                behind the product.</p>
+        </div>
+        <img src="https://via.placeholder.com/500" alt="Research">
+    </div> -->
+
+    <!-- News Section -->
+    <!-- <div id="news" class="section-content">
+        <div>
+            <h2>News</h2>
+            <p>Stay updated with the latest news and developments regarding our products and industry trends.</p>
+        </div>
+        <img src="https://via.placeholder.com/500" alt="News">
+    </div> -->
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="section-content">
+        <div>
+            <h2>Pricing</h2>
+            <p>Find out more about our pricing packages and how you can benefit from them.</p>
+        </div>
+        <img src="public/images/prisinng.png" alt="Pricing">
+    </div>
+
+    <!-- Product Cards Section -->
+    <div class="product-cards">
+        <!-- <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Description of Product 1</p>
+        </div> -->
+        <div class="product-card">
+           <a href="buy.html"><img src="public/images/ring.JPG" alt="Product "></a> 
+            <h3>Safety Gadget</h3>
+            
+        </div>
+        <!-- <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Description of Product 3</p>
+        </div> -->
+    </div>
+
+    <!-- Blog Post Section -->
+    <div class="blog-posts">
+        <div class="blog-post">
+            <img src="public/images/img3.png" alt="Blog Post 1">
+            <div class="content">
+                <h3>Blog Post 1</h3>
+               
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="public/images/img1.PNG" alt="Blog Post 2" >
+            <div class="content">
+                <h3>Blog Post 2</h3>
+                
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="public/images/img2.png" alt="Blog Post 3" >
+            <div class="content">
+                <h3>Blog Post 3</h3>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+     <!-- footer -->
+    <footer>
+        <!-- title -->
+        <div class="the">
+        <a href=""><span>THE </span><br>
+           <span class="show">SHOW</span><BR>
+           <span>MUST</span><br>
+           <span>GO ON</span><br>
+        </a> 
+         
+        </div>
+        <!-- subtitle -->
+        <div class="sub">
+          <a href=""> <li>Products</li></a>
+           <a href=""><li>About</li></a>
+           
+           
+        </div>
+        <div class="sub">
+         <a href=""> <li>Reviews</li></a>
+         <a href="">  <li>Shop</li></a>
+           <a href=""><li>Contact</li></a>
+          
+        </div>
+       
+
+            
+        </div>
+       
+    </footer>
+    
+   
+
+    <script>
+        // Function to show section based on clicked nav item
+        function showSection(section) {
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(s => s.classList.remove('active-section'));
+
+            const activeSection = document.getElementById(section);
+            if (activeSection) {
+                activeSection.classList.add('active-section');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
